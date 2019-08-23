@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1561505508 source:d:\dl\mini_database_39\main.cpp
+	<iostream>
+	<fstream>
+	<conio.h>
+	<cstdlib>
+	<limits>
+	<vector>
+	"Database.h"
+
+1561413003 source:d:\dl\mini_database_39\database.cpp
+	"Database.h"
+
+1561412665 d:\dl\mini_database_39\database.h
+	<string>
+
