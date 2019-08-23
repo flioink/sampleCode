@@ -59,8 +59,8 @@ int main()
       //selectionSort(a, n);
       //insertionSort(a, n);
       //heapSort(a, n);
-      //quickSort(a, 0, n - 1);
-      mergeSort(a, 0, n - 1);
+      quickSort(a, 0, n - 1);
+      //mergeSort(a, 0, n - 1);
 
       print(a, n);
 
