@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1567199984 source:d:\dl\ringbufferclass_ex40\main.cpp
+	<iostream>
+	"Ring.h"
+
+1567201005 d:\dl\ringbufferclass_ex40\ring.h
+	<memory>
+	<initializer_list>
+
