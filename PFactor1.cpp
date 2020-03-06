@@ -41,7 +41,7 @@ void prime(int n)
 
 int main()
 {
-    prime(900);
+    prime(24);
 
 
     return 0;

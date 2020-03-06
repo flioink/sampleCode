@@ -52,7 +52,7 @@ public:
         return _values[pos];
     }
 
-    void add(T value)
+    void add(const T& value)
     {
         _values[_pos++] = value;
 
