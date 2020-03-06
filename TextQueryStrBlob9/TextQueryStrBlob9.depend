@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1514140574 source:d:\dl\textquerystrblob9\main.cpp
+	<iostream>
+
+1583374594 source:d:\dl\textquerystrblob9\textquery.cpp
+	"TextQuery.h"
+
+1583374519 d:\dl\textquerystrblob9\textquery.h
+	<iostream>
+	<fstream>
+	<vector>
+	<map>
+	<set>
+	<memory>
+	<sstream>
+	<algorithm>
+

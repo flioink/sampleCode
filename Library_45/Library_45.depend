@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1567294063 source:d:\dl\library_45\main.cpp
+	<iostream>
+	"Book.h"
+	"Library.h"
+	"User.h"
+	<cstdlib>
+
+1567288090 source:d:\dl\library_45\book.cpp
+	"Book.h"
+
+1567288233 d:\dl\library_45\book.h
+	<iostream>
+	<string>
+
+1567289579 source:d:\dl\library_45\library.cpp
+	"Library.h"
+
+1567292589 d:\dl\library_45\library.h
+	"Book.h"
+	"User.h"
+
+1567292610 d:\dl\library_45\user.h
+	"Book.h"
+
+1567293332 source:d:\dl\library_45\user.cpp
+	"User.h"
+	"Library.h"
+
