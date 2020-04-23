@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1587160841 source:d:\dl\textquerystrvec13mcma\main.cpp
+	"TextQuery.h"
+	<iostream>
+
+1587160296 source:d:\dl\textquerystrvec13mcma\textquery.cpp
+	"TextQuery.h"
+
+1587161342 d:\dl\textquerystrvec13mcma\textquery.h
+	<iostream>
+	<fstream>
+	<vector>
+	<map>
+	<set>
+	<memory>
+	<sstream>
+	<algorithm>
+

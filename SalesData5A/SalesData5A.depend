@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1514144174 source:d:\dl\salesdata5a\main.cpp
+	<iostream>
+
+1587517703 source:d:\dl\salesdata5a\salesdata.cpp
+	"SalesData.h"
+
+1587517619 d:\dl\salesdata5a\salesdata.h
+	<iostream>
+
