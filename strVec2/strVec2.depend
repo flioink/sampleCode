@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1587522776 source:d:\dl\strvec2\main.cpp
+	<iostream>
+	"StrVec.h"
+	<vector>
+
+1587522872 d:\dl\strvec2\strvec.h
+	<memory>
+
+1587523485 source:d:\dl\strvec2\strvec.cpp
+	"StrVec.h"
+	<algorithm>
+
