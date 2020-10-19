@@ -45,13 +45,13 @@ void randomizeCaseList(ifstream& ifs, char choice, int permut)
         inputList.push_back(word);
 
     }
-    // create output object
 
+    // append a random number to the new file to avoid overwritting
     int verNum = rand() % 9999;
 
     string outName;
 
-    if(choice == 'r')
+    if(choice == 'r')//append it to whichever version u use
     {
         outName = "D:\\DL\\caps\\randomizedUpperLowerList" + std::to_string(verNum) + ".txt";
     }
@@ -66,8 +66,8 @@ void randomizeCaseList(ifstream& ifs, char choice, int permut)
 
     ofstream ofs(outName);
 
-    //execute option choices
-
+    //permut is just how many times are the cases switched around, can't be zero or negative
+    //it doesn't do anything if 'r' is not used
     if(permut <= 0)
         {
             cout << "Number of random permutations cannot be 0 or negative, exitting!\n";
@@ -79,7 +79,7 @@ void randomizeCaseList(ifstream& ifs, char choice, int permut)
     {
 
     case 'r'://randomize upper and lower case
-
+        //might as well give some feedback
         cout << "Randomizing upper and lower cases within each entry, please wait..." << endl;
 
         for(auto it = inputList.begin(); it != inputList.end(); ++it)
@@ -89,7 +89,7 @@ void randomizeCaseList(ifstream& ifs, char choice, int permut)
 
             //loop through each string
 
-            for(int p = 0; p != permut; ++p)
+            for(int p = 0; p != permut; ++p)//loop through as many times as permut
             {
                 for(int i = 0; i != tmp.size(); ++i)
                 {
