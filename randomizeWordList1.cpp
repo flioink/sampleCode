@@ -10,30 +10,69 @@ using std::ofstream;
 using std::string;
 using std::cout;
 using std::endl;
+using std::cin;
 
-
-void randomizeCaseList(ifstream& ifs, char choice, int permut);
+string addBackSlash(const string& s);
+void randomizeCaseList(const string& fileLoc, char choice, int permut);
 
 int main()
 {
-     srand(time(nullptr));
+    srand(time(nullptr));
 
-    ifstream ifs("D:\\DL\\caps\\names.txt");
+    char ch;
+    int pm = 1;
 
-    if(ifs.is_open())
+    cout << "Enter file location: ";//ask for the file location
+    string loc;
+    cin >> loc;
+
+    cout << "Select a mode:\n";// ask for mode
+    cout << "'u' for all Upper case" << endl;
+    cout << "'l' for all Lower case" << endl;
+    cout << "'r' for randomized case for each letter" << endl;
+    cin >> ch;
+
+    if(ch == 'r')//if r is chosen it will ask you how many variants to produce per word
     {
-        randomizeCaseList(ifs, 'u', 15);
+        cout << "Select number of permutations per word(cannot be 0 or negative): ";
+        cin >> pm;
     }
-     else
+
+    randomizeCaseList(loc, ch, pm);
+
+
+}
+
+string addBackSlash(const string& s)//not needed actually
+{
+    string tmp = s;
+
+    for(size_t i = 0; i != tmp.size();)
     {
-        cout << "Error reading file";
+        if(tmp[i] == '\\')
+        {
+            tmp.insert(++i, "\\");
+
+        }
+        else
+        {
+            ++i;
+        }
     }
+
+    return tmp;
 }
 
 
-
-void randomizeCaseList(ifstream& ifs, char choice, int permut)
+void randomizeCaseList(const string& fileLoc, char choice, int permut = 1)
 {
+    ifstream ifs(fileLoc);
+    if(!ifs)
+    {
+        cout << "Could not access the file" << endl;
+        return;
+    }
+
     //container for the words from input file
     vector<string> inputList;
     string word;
@@ -43,25 +82,25 @@ void randomizeCaseList(ifstream& ifs, char choice, int permut)
     {
         if(word.size() > 3)
         inputList.push_back(word);
-
     }
+    ifs.close();
 
-    // append a random number to the new file to avoid overwritting
+    // append a random number to the new file to avoid overwriting
     int verNum = rand() % 9999;
 
     string outName;
 
-    if(choice == 'r')//append it to whichever version u use
+    if(choice == 'r')//append to the name based on which version is used
     {
-        outName = "D:\\DL\\caps\\randomizedUpperLowerList" + std::to_string(verNum) + ".txt";
+        outName = fileLoc + "RandLowerUpper" + std::to_string(verNum) + ".txt";
     }
     else if(choice == 'u')
     {
-        outName = "D:\\DL\\caps\\upperCasedList" + std::to_string(verNum) + ".txt";
+        outName = fileLoc + "Upper" + std::to_string(verNum) + ".txt";
     }
     else if(choice == 'l')
     {
-        outName = "D:\\DL\\caps\\lowerCasedList" + std::to_string(verNum) + ".txt";
+        outName = fileLoc + "Lower" + std::to_string(verNum) + ".txt";
     }
 
     ofstream ofs(outName);
