@@ -43,16 +43,16 @@ int main()
 
 }
 
-string addBackSlash(const string& s)//not needed actually
+string addBackSlash(const string& s)//not needed in this eaxmple
 {
     string tmp = s;
 
-    for(size_t i = 0; i != tmp.size();)
+    for(size_t i = 0, len = s.size(); i != len;)
     {
         if(tmp[i] == '\\')
         {
             tmp.insert(++i, "\\");
-
+            len = tmp.size();
         }
         else
         {

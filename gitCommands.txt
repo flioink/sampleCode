@@ -1,5 +1,5 @@
 git add <filename> //add a file filename
-git add * //add all files
+git add . //add all files
 git commit -m "Commit message" // commit directly
 git push origin master //send to remote repo
 git status // track status
