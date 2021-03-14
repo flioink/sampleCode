@@ -2,7 +2,10 @@
 #include <fstream>
 #include <vector>
 #include <ctime>
+#include <sstream>
 #include <conio.h>
+#include <algorithm>
+#include <iomanip>
 
 using std::vector;
 using std::fstream;
@@ -149,26 +152,35 @@ void randomizeCaseList(const string& fileLoc, char choice, int permut = 1)
 string appendName(const string& fileLoc, const char& choice)
 {
     string outName;
-    int verNum = rand() % 9999;
+
+    //getting the time
+    auto t = std::time(nullptr);
+    auto tm = *std::localtime(&t);
+    //converting to a string
+    std::ostringstream oss;
+    oss << std::put_time(&tm, "%d_%m_%Y_%H_%M_%S");
+    auto date = oss.str();
+
 
     if(choice == 'r')//append to the name based on which version is used
     {
-        outName = fileLoc + "RandLowerUpper" + std::to_string(verNum) + ".txt";
+        outName = fileLoc + "RandLowerUpper" + date + ".txt";
     }
 
     else if(choice == 'u')
     {
-        outName = fileLoc + "Upper" + std::to_string(verNum) + ".txt";
+        outName = fileLoc + "Upper" + date + ".txt";
+        cout << outName;
     }
 
     else if(choice == 'l')
     {
-        outName = fileLoc + "Lower" + std::to_string(verNum) + ".txt";
+        outName = fileLoc + "Lower" + date + ".txt";
     }
 
     else if(choice == 'c')
     {
-        outName = fileLoc + "CapitalizedAll" + std::to_string(verNum) + ".txt";
+        outName = fileLoc + "CapitalizedAll" + date + ".txt";
     }
 
     return outName;
@@ -226,7 +238,7 @@ string setAllToLower(const string& tmp)
     //loop through each string
     for(int i = 0; i != localTmp.size(); ++i)
     {
-        //Make everything Upper Case
+        //Make everything Lower Case
         localTmp[i] = tolower(localTmp[i]);
     }
     return localTmp;
